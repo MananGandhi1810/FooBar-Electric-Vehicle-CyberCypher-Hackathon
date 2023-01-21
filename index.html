@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Cars</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                <a href="#">
+                    ElectricVehicles
+                </a>
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#compare">Compare</a>
+            <a href="#find">Find An EV</a>
+            <a href="#chargers">Find Charging Stations</a>
+        </div>
+    </div>
+    <div class="all-segments">
+        <div id="home" class="segment">
+            <div id="home-text-div">
+                <div class="home-text">
+                    <h1>Electric Vehicles</h1>
+                    <p>Want to chose which electric vehicle to buy? Or whether to actually buy one or not? You have come
+                        to the right place. Our algorithms will ensure that you get the best recommendation as to which
+                        vehicle to buy.</p>
+                    <model-viewer alt="Tesla Model S Plaid 2021"
+                        src="assets/car_3d_models/tesla_model_s_plaid_2021/scene.gltf" shadow-intensity="1"
+                        camera-controls touch-action="pan-y"></model-viewer>
+                </div>
+            </div>
+            <div id="compare" class="segment">
+                <!-- TODO -->
+            </div>
+            <div id="find" class="segment">
+                <!-- TODO -->
+            </div>
+            <div id="chargers" class="segment">
+                <!-- TODO -->
+            </div>
+        </div>
+</body>
+
+</html>
