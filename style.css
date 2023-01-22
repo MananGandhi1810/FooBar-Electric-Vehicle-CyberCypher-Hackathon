@@ -310,3 +310,10 @@ form>button#submit{
     border: 3px solid black;
     border-radius: 7px;
 }
+
+h1{
+    color: #efefef;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 10px;
+}
