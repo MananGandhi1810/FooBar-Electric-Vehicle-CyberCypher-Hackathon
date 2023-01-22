@@ -44,21 +44,74 @@
                     <p>Want to chose which electric vehicle to buy? Or whether to actually buy one or not? You have come
                         to the right place. Our algorithms will ensure that you get the best recommendation as to which
                         vehicle to buy.</p>
-                    <model-viewer alt="Tesla Model S Plaid 2021"
-                        src="assets/car_3d_models/tesla_model_s_plaid_2021/scene.gltf" shadow-intensity="1"
-                        camera-controls touch-action="pan-y"></model-viewer>
                 </div>
             </div>
-            <div id="compare" class="segment">
-                <!-- TODO -->
-            </div>
-            <div id="find" class="segment">
-                <!-- TODO -->
-            </div>
-            <div id="chargers" class="segment">
-                <!-- TODO -->
-            </div>
+            <model-viewer id="home-model-viewer" alt="Tesla Model S Plaid 2021"
+                src="assets/car_3d_models/tesla_model_s_plaid_2021/scene.gltf" shadow-intensity="1" camera-controls
+                touch-action="pan-y"></model-viewer>
         </div>
+        <hr>
+        <div id="compare" class="segment">
+            <form action="javascript:void(0)" id="compareform" onsubmit="compareEVPetrol()">
+                <label for="distance">Distance driven by car everyday</label><input type="number" name="distance"
+                    id="distance" placeholder="Total distance travelled"><br>
+                <label for="price">Price of petrol per litre</label><input type="number" name="price" id="price"
+                    placeholder="Price of petrol per litre"><br>
+                <label for="mileage">Mileage of petrol car</label><input type="number" name="mileage" id="mileage"
+                    placeholder="Mileage of petrol car"><br>
+                <label for="range">Total range of electric car</label><input type="number" name="range" id="range"
+                    placeholder="Total range of electric car"><br>
+                <label for="batterycapacity">Battery capacity in kWh</label><input type="number" name="batterycapacity"
+                    id="batterycapacity" placeholder="Battery capacity in kWh"><br>
+                <label for="electricityprice">Price of electricity per unit</label><input type="number"
+                    name="electricityprice" id="electricityprice" placeholder="Price of electricity per unit"><br>
+                <input type="submit" value="Submit">
+                <p class="result hidden" id="result">Cost: An electric vehicle will cost you Rs.<span
+                        id="electricVehicleCost"></span> per year, and a petrol vehicle will cost you Rs.<span
+                        id="petrolVehicleCost"></span> per year</p>
+            </form>
+        </div>
+        <hr>
+        <div id="find" class="segment">
+            <form action="javascript:void(0)" onclick="getAnEV()">
+                <label for="budget">Budget:</label>
+                <select name="budget" id="budget-dropdown">
+                    <option value="" disabled>Select Budget</option>
+                    <option value="">All</option>
+                    <option value="5">8-12 Lakhs</option>
+                    <option value="6">12-18 Lakhs</option>
+                    <option value="7">18-25 Lakhs</option>
+                    <option value="8">25-40 Lakhs</option>
+                    <option value="9">40+ Lakhs</option>
+                </select>
+                <label for="capacity">Capacity:</label>
+                <select name="capacity" id="capacity-dropdown">
+                    <option value="" disabled>Select Capacity</option>
+                    <option value="">All</option>
+                    <option value="1">Upto 5 seats</option>
+                    <option value="2">6-8 seats</option>
+                </select>
+                <label for="type">Type:</label>
+                <select name="type" id="type-dropdown">
+                    <option value="" disabled>Select Type</option>
+                    <option value="">All</option>
+                    <option value="1">Sedan</option>
+                    <option value="3">Hatchback</option>
+                    <option value="6">SUV</option>
+                    <option value="8">Station Wagon</option>
+                    <option value="9">MUV</option>
+                    <option value="10">Compact Sedan</option>
+                    <option value="11">Compact SUV</option>
+                </select>
+                <input type="submit" value="Submit" id="submit">
+            </form>
+            <br>
+            <br><br>
+            <div id="evs" class="evs"></div>
+        </div>
+        <iframe id="chargers" class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?hl=en&amp;q=EV Charging Station&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+    </div>
+    </div>
 </body>
 
 </html>
